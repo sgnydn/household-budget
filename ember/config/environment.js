@@ -20,11 +20,18 @@ module.exports = function(environment) {
   };
 
   if (environment === 'development') {
-    // ENV.APP.LOG_RESOLVER = true;
-    // ENV.APP.LOG_ACTIVE_GENERATION = true;
-    // ENV.APP.LOG_TRANSITIONS = true;
-    // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
-    // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.APP.SERVER_URL = 'http://localhost:3000';
+    //ENV.APP.LOG_RESOLVER = true;
+    //ENV.APP.LOG_ACTIVE_GENERATION = true;
+    //ENV.APP.LOG_TRANSITIONS = true;
+    //ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
+    //ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.contentSecurityPolicy = {
+      'connect-src': "'self'  'unsafe-eval' http://*:3000",
+      'style-src': "'self'",
+      'script-src': "'self'  'unsafe-eval' http://*:3000",
+      'img-src': "'self' https://www.gravatar.com http://www.gravatar.com http://*:3000 "
+    }
   }
 
   if (environment === 'test') {

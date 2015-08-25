@@ -1,0 +1,7 @@
+<h1>Master Types Index (List)</h1>
+<ul>
+{{#each model as |type|}}
+  <!--<li>{{#link-to 'master-type' type.slug}}{{type.mTypeName}}{{/link-to}} - {{type.mTypeCode}}</li>-->
+<li>{{#link-to 'master-type' type.id}}{{type.mTypeName}}{{/link-to}} - {{type.mTypeCode}}</li>
+{{/each}}
+</ul>
